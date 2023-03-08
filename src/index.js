@@ -12,9 +12,6 @@ const upload = async (e) => {
   await addScore(userInput.value, scoreInput.value);
   userInput.value = '';
   scoreInput.value = '';
-
-  const display = await getData();
-  renderList(display.result);
 };
 
 submitBtn.addEventListener('click', upload);
@@ -24,6 +21,6 @@ const refresh = async () => {
   renderList(get.result);
 };
 
-refreshBtn.addEventListener('click', () => refresh);
+refreshBtn.addEventListener('click', refresh);
 
 window.onload = refresh;
